@@ -1,0 +1,6 @@
+venv
+db.sqlite3
+Pipfile
+Pipfile.lock
+__pycache__
+migrations
