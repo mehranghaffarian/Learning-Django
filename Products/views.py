@@ -2,7 +2,10 @@ from django.shortcuts import render
 
 # Create your views here.
 def home_view(request, *args, **kargs):
-    return render(request, "home.html", {}) 
+    ctx = {
+        'code': 1234
+    }
+    return render(request, "home.html", ctx) 
 
 def product_view(request, *args, **kargs):
     return render(request, "product.html", {}) 
