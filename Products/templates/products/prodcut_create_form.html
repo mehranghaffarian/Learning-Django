@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+<head>
+    <title>{% block title %}Create Product{% endblock %}</title>
+</head>
+
+{% block content %}
+<body>
+    <h2>Create a New Product</h2>
+    <form method="post">
+        {% csrf_token %}  {# Security token required for POST requests #}
+        {{ form.as_p }}  {# Render form fields as paragraphs #}
+        <button type="submit">Save</button>
+    </form>
+</body>
+{% endblock %}

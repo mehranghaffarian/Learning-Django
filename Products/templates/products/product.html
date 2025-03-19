@@ -1,4 +1,15 @@
-<h1>Product</h1>
-<p>This is {{object.name}}</p>
-<p>This is {{object.summary}}</p>
-<p>This is {{object.price}}</p>
+{% extends "base.html" %}
+
+{% block title %}{{ object.name }} - Product Detail{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-body">
+            <h2 class="card-title text-center">{{ object.name }}</h2>
+            <p class="card-text"><strong>Description:</strong> {{ object.summary }}</p>
+            <p class="card-text"><strong>Price:</strong> ${{ object.price }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
