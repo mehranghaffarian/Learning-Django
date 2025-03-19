@@ -1,17 +1,10 @@
 from django.shortcuts import render
+from .models import Product
 
 # Create your views here.
-def home_view(request, *args, **kargs):
+def product_view(request):
+    obj = Product.objects.get(id=1)
     ctx = {
-        'code': 1234
+        'object': obj
     }
-    return render(request, "home.html", ctx) 
-
-def product_view(request, *args, **kargs):
-    return render(request, "product.html", {}) 
-
-def cart_view(request, *args, **kargs):
-    return render(request, "cart.html", {}) 
-
-def category_view(request, *args, **kargs):
-    return render(request, "category.html", {}) 
+    return render(request, "products/product.html", ctx)
